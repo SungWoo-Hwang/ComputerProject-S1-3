@@ -1,0 +1,61 @@
+package co.kr.sky.foodtruck.customer;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import co.kr.sky.foodtruck.R;
+import co.kr.sky.foodtruck.common.ActivityEx;
+import co.kr.sky.foodtruck.obj.MemberObj;
+
+public class HoogiActivity extends ActivityEx{
+
+    private TextView common_title_tv;
+    private EditText info;
+    private EditText menu;
+    private MemberObj obj;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_hoogi);
+        obj = getIntent().getParcelableExtra("obj");
+
+        init();
+        //메뉴 가져오기 api
+
+    }
+
+    private void init(){
+        common_title_tv = (TextView)findViewById(R.id.common_title_tv);
+        info = (EditText)findViewById(R.id.info);
+        menu = (EditText)findViewById(R.id.menu);
+
+
+
+        common_title_tv.setText(obj.getNAME());
+        info.setText(obj.getINTRODUCE());
+
+        findViewById(R.id.btn_hoogi).setOnClickListener(btnListener);
+        findViewById(R.id.btn_order).setOnClickListener(btnListener);
+        findViewById(R.id.common_left_btn).setOnClickListener(btnListener);
+
+    }
+    //버튼 리스너 구현 부분
+    View.OnClickListener btnListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_hoogi:
+                    break;
+                case R.id.btn_order:
+                    break;
+                case R.id.common_left_btn:
+                    finish();
+                    break;
+
+            }
+        }
+    };
+
+}

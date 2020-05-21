@@ -1,0 +1,30 @@
+package co.kr.sky.foodtruck;
+
+import android.os.Bundle;
+import android.widget.ListView;
+
+import co.kr.sky.foodtruck.common.ActivityEx;
+
+public class OrderListActivity extends ActivityEx{
+
+
+    private ListView reviewList;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_orderlist);
+
+        init();
+    }
+
+    private void init(){
+        reviewList = (ListView)findViewById(R.id.reviewList);
+
+
+
+
+    }
+}

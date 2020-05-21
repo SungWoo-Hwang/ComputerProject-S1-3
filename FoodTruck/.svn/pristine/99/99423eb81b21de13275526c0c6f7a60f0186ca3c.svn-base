@@ -1,0 +1,15 @@
+package co.kr.sky.foodtruck;
+
+import androidx.appcompat.app.AppCompatActivity;
+import co.kr.sky.foodtruck.common.ActivityEx;
+
+import android.os.Bundle;
+
+public class MainActivity extends ActivityEx {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
