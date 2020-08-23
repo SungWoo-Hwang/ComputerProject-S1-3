@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@drawable/bgche"
     android:orientation="vertical">
 
 
@@ -13,25 +13,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:id="@+id/bottomview"
         android:layout_alignParentBottom="true"
+        android:gravity="center"
         android:layout_height="wrap_content">
 
         <Button
-            android:text="후기"
             android:id="@+id/btn_hoogi"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"/>
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_on"
+            android:text="후기" />
+
         <Button
-            android:text="주문하기"
             android:id="@+id/btn_order"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"/>
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button"
+            android:text="주문하기" />
 
 
 
@@ -50,14 +52,19 @@
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@drawable/memo"/>
+
 
         <EditText
             android:id="@+id/menu"
             android:layout_weight="1"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="700dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/memo"/>
 
     </LinearLayout>
 

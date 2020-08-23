@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@drawable/bgche"
     android:layout_gravity="center"
     android:id="@+id/bodyview"
     android:gravity="center"
@@ -35,13 +35,16 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_height="wrap_content"/>
+
         <EditText
             android:id="@+id/introduce_edit"
-            android:layout_marginTop="20dp"
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
-            android:hint="가게 소개 내용, 오픈 날짜 시간 , 상세위치 메뉴 소개"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/memo"
+            android:hint="   가게 소개 내용, 오픈 날짜 시간 , 상세위치 메뉴 소개"
+            />
     </LinearLayout>
 
 
@@ -55,10 +58,11 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:layout_width="match_parent"
             android:text="확인"
-            android:id="@+id/savebtn"
-            android:layout_height="wrap_content"/>
+            android:layout_gravity="center"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:background="@drawable/button"/>
     </LinearLayout>
 
 

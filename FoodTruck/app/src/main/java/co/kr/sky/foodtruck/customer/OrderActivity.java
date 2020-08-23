@@ -201,6 +201,7 @@ public class OrderActivity extends ActivityEx{
                     //스레드 생성
                     mThread = new AccumThread(getApplicationContext(), mAfterAccum, map, 0, 1, null);
                     mThread.start();        //스레드 시작!!
+
                     break;
                 case R.id.common_left_btn:
                     finish();

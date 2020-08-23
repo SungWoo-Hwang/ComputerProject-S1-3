@@ -39,12 +39,12 @@ public class LoginActivity extends ActivityEx {
         edit_pw = (EditText)findViewById(R.id.edit_pw);
 
         //점주
-        //edit_id.setText("snap40");
-       //edit_pw.setText("rbdyd3174");
+        edit_id.setText("snap40");
+        edit_pw.setText("rbdyd3174");
 
         //고객
-        //edit_id.setText("cc1");
-        //edit_pw.setText("1234");
+//        edit_id.setText("cc1");
+//        edit_pw.setText("1234");
 
         findViewById(R.id.btn_login).setOnClickListener(btnListener);
         findViewById(R.id.btn_find_id).setOnClickListener(btnListener);
