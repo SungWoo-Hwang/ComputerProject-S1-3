@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900');
+
+
+* { box-sizing: border-box; }
+
+*, html, body {
+	font-family: "Noto Sans KR", sans-serif; position: relative; z-index: 1;
+	-webkit-text-size-adjust:none;
+}
+
+
+html {height:100%; overflow-y: scroll; -webkit-overflow-scrolling : touch; overflow-x: hidden; }
+body {margin:0;padding:0;font-size:13px;font-weight: 500;height:100%; color:#000; }
+
+html, body { width: 100%; height:100%; background: #000000; }
+
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6 {font-weight:700; font-size:15px;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+#hd ul, nav ul, #ft ul {margin:0;padding:0;list-style:none}
+legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, button, select, img {vertical-align:middle}
+input, button {margin:0;padding:0;font-size:1em}
+button {cursor:pointer}
+textarea, select {font-size:1em}
+select {margin:0}
+p {margin:0;padding:0;word-break:break-all;}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1.1em}
+a:link, a:visited {font-size:13px;font-weight: 500;color:#000;text-decoration:none}
+a:hover, a:focus, a:active {color:#000;text-decoration:none}
+ul {padding:0; margin:0; list-style:none;}
+li {padding:0; margin:0; list-style:none;}
+ul:after{display:block;visibility:hidden;clear:both;content:""}
+li:after{display:block;visibility:hidden;clear:both;content:""}
+
+img { margin-top: -2px; }
+
+.fl { float: left; }
+.fr { float: right; }
+.alignr { text-align: right !important; }
+.alignl { text-align: left !important; }
+.alignc { text-align: center !important; }
+.margint-5 { margin-top: -5px !important; }
+.margint0 { margin-top: 0px !important; }
+.margint3 { margin-top: 3px !important; }
+.margint5 { margin-top: 5px !important; }
+.margint7 { margin-top: 7px !important; }
+.margint10 { margin-top: 10px !important; }
+.margint20 { margin-top: 20px !important; }
+.margint30 { margin-top: 30px !important; }
+.margint40 { margin-top: 40px !important; }
+.margint50 { margin-top: 50px !important; }
+.w50-10 { width: calc(50% - 10px); }
+
+
+.marginb10 { margin-bottom: 10px !important; }
+
+.padding1020 { padding: 10px 20px !important; }
+.padding35_0 { padding: 35px 0px !important; }
+
+
+.chat_body { padding: 15px; }

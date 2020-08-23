@@ -1,0 +1,18 @@
+.login_title {
+	color: #a58b58; font-weight: 700; margin-top: 100px; font-size: 20px;
+}
+
+.login_title > p { color: #fff; font-size: 30px; }
+
+.login_form_area { margin-top: 80px; }
+.login_form_area > form > div { margin-top: 20px; }
+.login_form_area > form > div > p:first-child { color: #fff; }
+.login_form_area > form > div > p:first-child > span { color: #a58b58; }
+.login_form_area > form > div > p:last-child { margin-top: 10px;  }
+.login_form_area > form > div > p:last-child > input {
+	width: 100%; padding: 5px; height: 40px; border: 1px solid #a58b58; background: none;
+}
+
+.login_form_area > form > button { 
+	margin-top: 10px; width: 100%; border: none; background: #a58b58; color: #fff; font-size: 15px; font-weight: 700; text-align: center; line-height: 50px; 
+}

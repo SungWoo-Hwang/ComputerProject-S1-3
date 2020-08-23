@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="utf-8" /> 
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<meta name="format-detection" content="telephone=no" /> 
+<title>미사앱</title>         
+<link rel="stylesheet" href="../../include/css/common.css" type="text/css" /> 
+</head>
+<style>
+
+</style>
+</head> 
+<body>
+<div id="app" class="wrapper">
+	<template>
+	<div class="home">
+		<div class="swiper-slide t01 on">
+			<p class="s03">MICHAA Story</p>
+			<div class="cont">
+				<p class="s01">MICHAA Story</p>
+				<p class="s02">Product</p>
+			</div>
+		</div>
+		<div class="swiper-slide t02">
+			<p class="s03">Time Line</p>
+			<div class="cont">
+				<p class="s01">Time Line</p>
+				<p class="s02">Product</p>
+			</div>
+		</div>
+		<div class="swiper-slide t03">
+			<p class="s03">매장정보</p>
+			<div class="cont">
+				<p class="s01">매장정보</p>
+				<p class="s02">Product</p>
+			</div>
+		</div>
+		<div class="swiper-slide t04">
+			<p class="s03">제휴프로그램</p>
+			<div class="cont">
+				<p class="s01">제휴프로그램</p>
+				<p class="s02">Product</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<md-button class="ico01">홈</md-button>
+		<md-button class="ico02">채팅</md-button>
+		<md-button class="ico03">상품</md-button>
+		<md-button class="ico04">등록</md-button>
+	</footer>
+	</template>
+</div>
+
+	 
+
+</div><!-- end cls:wrapper-->
+
+<script type="text/javascript" src="../../include/js/vue.lib.js" charset="utf-8"></script> 
+<script type="text/javascript" src="../../include/js/ui.js"></script>   
+<script type="text/javascript" src="../../include/js/common.js"></script> 
+<script>
+var app = new Vue({
+	data: function data() {
+		return {}
+	}
+});
+app.$mount("#app");
+var activeIndex = 1;
+var offsetArr = [];
+$(function(){
+	$(".swiper-slide").each(function(i){
+		var offsetTop = $(this).offset().top;
+		$(this).css("top",offsetTop+"px");
+		offsetArr.push(offsetTop);
+	});
+	$(".swiper-slide").eq(0).find(".s03").hide();
+	$(".home").hammer().on("drag", function(ev){
+		if(ev.gesture.direction == "up" ){
+			if(activeIndex > 0){
+				var _top = offsetArr[activeIndex]+ev.gesture.deltaY;
+				$(".swiper-slide").eq(activeIndex).css({"top": _top+'px'},0);
+				$(".swiper-slide").eq(activeIndex).find(".s03").hide();
+			}
+		}else if(ev.gesture.direction == "down" ){
+			if(activeIndex > 1){
+				$(".swiper-slide").eq(activeIndex-1).css({"top": ev.gesture.deltaY+'px'},0);
+			}
+		}
+	}); 
+	$(".home").hammer().on("dragend", function(ev){
+		if(activeIndex > 0){
+			console.log(ev.gesture);
+			console.log(ev.gesture.deltaY);
+			if(ev.gesture.direction == "up" ){
+				if(ev.gesture.deltaY < - 200){
+					$(".swiper-slide").eq(activeIndex).stop().animate({"top": "0px"},400);
+					if(activeIndex < offsetArr.length){
+						$(".swiper-slide").removeClass("on");
+						//$(".swiper-slide .s02").hide();
+						$(".swiper-slide").eq(activeIndex).addClass("on");
+						//$(".swiper-slide").eq(activeIndex).find(".s02").fadeIn(500);
+						activeIndex++;
+					}
+				}else{
+					$(".swiper-slide").eq(activeIndex).stop().animate({"top": offsetArr[1]+"px"},400);
+				}
+			}else if(ev.gesture.direction == "down" ){
+				if(ev.gesture.deltaY < - 200){
+					$(".swiper-slide").eq(activeIndex-1).stop().animate({"top": "0px"},400);
+				}else{
+					//
+					$(".swiper-slide").eq(activeIndex-1).stop().animate({"top": offsetArr[activeIndex-1]+"px"},400);
+					if(activeIndex > 1){
+						$(".swiper-slide").removeClass("on");
+						$(".swiper-slide").eq(activeIndex-2).addClass("on");
+						$(".swiper-slide").eq(activeIndex-1).find(".s03").show();
+						activeIndex--;
+					}
+				}
+			}
+		}
+	}); 
+});
+
+</script>
+</body>
+</html> 
