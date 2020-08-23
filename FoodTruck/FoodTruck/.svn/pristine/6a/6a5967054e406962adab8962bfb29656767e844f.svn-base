@@ -1,0 +1,72 @@
+package co.kr.sky.foodtruck.adapter;
+
+import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+import co.kr.sky.foodtruck.R;
+import co.kr.sky.foodtruck.common.CommonUtil;
+import co.kr.sky.foodtruck.obj.HoogiObj;
+
+
+public class MenuListAdapter extends BaseAdapter {
+
+    private Activity activity;
+    private static LayoutInflater inflater = null;
+    ArrayList<HoogiObj> items;
+    CommonUtil dataSet = CommonUtil.getInstance();
+
+    public MenuListAdapter(Activity a, ArrayList<HoogiObj> m_board) {
+        activity = a;
+        inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        items = m_board;
+
+    }
+
+    public int getCount() {
+        return items.size();
+    }
+
+    public Object getItem(int position) {
+        return position;
+    }
+
+    public long getItemId(int position) {
+        return position;
+    }
+
+    static class ViewHolder {
+        TextView item_id , item_date , item_body;
+    }
+
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        final HoogiObj board = items.get(position);
+        ViewHolder vh = new ViewHolder();
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.menulist_item, null);
+            vh.item_id         = (TextView) convertView.findViewById(R.id.item_id);
+            vh.item_date         = (TextView) convertView.findViewById(R.id.item_date);
+            vh.item_body         = (TextView) convertView.findViewById(R.id.item_body);
+            convertView.setTag(vh);
+        } else {
+            vh = (ViewHolder) convertView.getTag();
+        }
+
+
+
+//        vh.item_worker_no.setText(board.getFACE_ID());
+        vh.item_id.setText(board.getID());
+        vh.item_date.setText(board.getDATE());
+        vh.item_body.setText(board.getREVIEW());
+
+        return convertView;
+    }
+
+
+}
